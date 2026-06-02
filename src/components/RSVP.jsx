@@ -110,7 +110,7 @@ export default function RSVP() {
               </select>
             </div>
             <div className="field" id="busField">
-              <label>¿Usará el autobus alguno de los asistentes?</label>
+              <label>¿Usará el autobús alguno de los asistentes?</label>
               <div className="seg" role="radiogroup">
                 <button type="button" data-bus="hinojosa"
                   className={form.bus === 'hinojosa' ? 'active' : ''}

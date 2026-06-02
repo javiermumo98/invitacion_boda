@@ -72,7 +72,7 @@ export default function RSVP() {
       <div className="overline reveal">Confirma tu asistencia</div>
       <h2 className="title reveal">¿Vendrás?</h2>
       <p className="body-text reveal">
-        Nos encantaría contar contigo. Confírmanos antes del <b style={{ fontWeight: 500 }}>15 de junio</b>.
+        Nos encantaría contar contigo. Confírmanos antes del <b style={{ fontWeight: 500 }}>19 de junio</b>.
       </p>
       <form className="form-wrap reveal" id="rsvpForm" autoComplete="off" onSubmit={handleSubmit}>
         <div className="field">
@@ -110,7 +110,7 @@ export default function RSVP() {
               </select>
             </div>
             <div className="field" id="busField">
-              <label>¿Usarás el autobús?</label>
+              <label>¿Usará el autobus alguno de los asistentes?</label>
               <div className="seg" role="radiogroup">
                 <button type="button" data-bus="hinojosa"
                   className={form.bus === 'hinojosa' ? 'active' : ''}
@@ -125,7 +125,7 @@ export default function RSVP() {
                 <button type="button" data-bus="no"
                   className={form.bus === 'no' ? 'active' : ''}
                   onClick={() => set('bus', 'no')}>
-                  No lo usaré
+                  No lo usará
                 </button>
               </div>
             </div>

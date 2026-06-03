@@ -17,6 +17,7 @@ export default function RSVP() {
   const [form, setForm] = useState(INITIAL)
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [attendedYes, setAttendedYes] = useState(false)
 
   const attending = form.attend === 'si'
   const maxPersonas = parseInt(form.acompanantes) || 7
@@ -51,6 +52,7 @@ export default function RSVP() {
     try {
       await fetch(SHEETS_URL + '?' + new URLSearchParams(data).toString(), { mode: 'no-cors' })
     } catch (_) {}
+    setAttendedYes(attending)
     setSubmitted(true)
   }
 
@@ -60,7 +62,9 @@ export default function RSVP() {
         <div className="thanks show" id="thanks">
           <h3>¡Gracias!</h3>
           <p className="body-text" style={{ margin: '8px auto 0' }}>
-            Hemos anotado tu respuesta.<br />Nos vemos el 4 de julio.
+            {attendedYes
+              ? <>Hemos anotado tu respuesta.<br />Nos vemos el 4 de julio.</>
+              : 'Gracias por responder a este formulario.'}
           </p>
         </div>
       </section>
